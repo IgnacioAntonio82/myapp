@@ -12,16 +12,16 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: hello
-    if: ${{ needs.hello.result == 'success' }}
+    #needs: hello
+   # if: ${{ needs.hello.result == 'success' }}
     steps:
       - name: Ejecucion de test
         run: echo "Running Test"
 
   deploy:
     runs-on: ubuntu-latest
-    needs: test
-    if: ${{ needs.test.result == 'success' }}
+   #needs: test
+   #if: ${{ needs.test.result == 'success' }}
     steps:
       - name: Deploy aplicacion
         run: echo "Deploying application"
